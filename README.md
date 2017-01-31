@@ -1,4 +1,10 @@
-The steps to reproduce this project will be explain. The Baxter robot has two gripper, also, one camera in each arm thay let us manipulation of some objects. In this work, we are working to develop the object clasification using open CV and inverse kinematic. The project is develop for Ubuntu 14.04 using ROS. 
+The steps to reproduce this project will be explain. The Baxter robot could follow human motion using Inverse Kinematic (IK). In this work, we are working to develop to obtain human motion position and reproduce them in the Baxter. The project is develop for Ubuntu 14.04 using ROS. 
+
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=1cECGg1YLfo
+" target="_blank"><img src="http://img.youtube.com/vi/1cECGg1YLfo/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360"  align="center" border="10" /></a>
+
 
 ##0-Dependence
 ###Workspace
@@ -21,6 +27,8 @@ roscd
 cd ..
 catkin_make
 ```
+
+Also you need to get the packages https://github.com/JoseAvalos/baxter_kinect360. In order, to process the data from the kinect.
 
 ##2-Robot Conection
 
@@ -52,22 +60,20 @@ rosrun baxter_tools enable_robot.py -e
 You will se the direcction in the terminal. It means that you could interact with the robot in just this windows. 
 
 ##3.-Image Processing
-The camera will detect a determinate color. This value could be edit in the script directory. We have to open a terminal with ./baxter.sh before to execue:
+The camera will detect a person using the kinect. In order to transfer this information with the workspace of the baxter, we  have to open the ./baxter.sh before to :
 ```
-rosrun baxter_cpp left_camera.py
+Terminal_1:
+roslaunch openni_launch openni.launch
+
+Terminal_2:
+rosrun openni_tracker openni_tracker
 ```
-```
-rosrun baxter_cpp right_camera.py
-```
+As recomendation one person has to be working in the laptop and another in fton of the kinect. Avoid more than one person because the topic will generate som much noise. In the terminal will apper user 1, if you see user 2, yoyu have to reset the program. 
 
 ##4.-Reproduce
-Finally, We could reproduce the real motion in the baxter. We have the option of work with one or two hands.
+Finally, We could reproduce the real motion in the baxter. We have the option of work with two hands.
 
 ```
-rosrun baxter_cpp left_OSIK_baxter
-```
-
-```
-rosrun baxter_cpp right_OSIK_baxter
+rosrun baxter_cpp OSIK_baxter 
 ```
 

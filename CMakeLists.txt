@@ -88,12 +88,12 @@ SET(ALL_LIBRARIES
 
 
 
-#add_executable(Data_Kinect filtro_kinect.cpp)
-#TARGET_LINK_LIBRARIES( Data_Kinect
+# add_executable(Data_Kinect filtro_kinect.cpp)
+# TARGET_LINK_LIBRARIES( Data_Kinect
 #  ${catkin_LIBRARIES}
 #)
-#add_executable(Publisher publisher.cpp)
-#TARGET_LINK_LIBRARIES( Publisher
+# add_executable(Publisher publisher.cpp)
+# TARGET_LINK_LIBRARIES( Publisher
 ##  baxter_cpp
 #  ${catkin_LIBRARIES}
 #)
@@ -115,14 +115,14 @@ ${CMAKE_THREAD_LIBS_INIT}
 #  ${qpOASES_LIBRARIES}
 #)
 
-add_executable(left_OSIK_baxter left_baxter.cpp)
-TARGET_LINK_LIBRARIES( left_OSIK_baxter
-${ALL_LIBRARIES}
-)
+#add_executable(left_OSIK_baxter left_baxter.cpp)
+#TARGET_LINK_LIBRARIES( left_OSIK_baxter
+#${ALL_LIBRARIES}
+#)
 
-add_executable(right_OSIK_baxter right_baxter.cpp)
-TARGET_LINK_LIBRARIES( right_OSIK_baxter
-${ALL_LIBRARIES}
-)
+#add_executable(right_OSIK_baxter right_baxter.cpp)
+#TARGET_LINK_LIBRARIES( right_OSIK_baxter
+#${ALL_LIBRARIES}
+#)
 
 

@@ -1,3 +1,4 @@
+# Baxter Motion Inverse Kinematic
 The steps to reproduce this project will be explain. The Baxter robot could follow human motion using Inverse Kinematic (IK). In this work, we are working to develop to obtain human motion position and reproduce them in the Baxter. The project is develop for Ubuntu 14.04 using ROS. 
 
 

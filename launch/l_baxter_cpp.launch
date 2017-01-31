@@ -1,0 +1,18 @@
+<launch>
+   <!--
+  <node pkg="baxter_tools" type="enable_robot" name="baxter_tools" />
+  <command="-e" />ss
+  --> 
+
+
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher" />
+  <param name="robot_description" command="$(find xacro)/xacro.py --inorder $(find baxter_description)/urdf/baxter.urdf.xacro" />
+
+  <param name="reference_frame" value="torso" />
+  <arg name="config_file" value="$(find baxter_cpp)/config/baxter.rviz"/>
+  <node name="rviz_display" pkg="rviz" type="rviz" respawn="false" output="screen" args="-d $(arg config_file)" />
+  
+  <node pkg="baxter_cpp" type="mouse.py" name="baxter_mouse" />
+ 
+</launch>
+
